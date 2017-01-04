@@ -5,14 +5,32 @@
 
 #### Sommaire
 
-1. Installer la chaine de cross-compilation GCC ARM Embedded
+1. Installer les XCode Command Line Tools
+2. Installer la chaine de cross-compilation GCC ARM Embedded
 	1. En téléchargeant les binaires sur le site  (plus à jour)
 	2. Via Homebrew (plus simple)
-2. Installer JLinkGDBServer et les drivers de la sonde SEGGER
-3. Utiliser une console série
+3. Installer JLinkGDBServer et les drivers de la sonde SEGGER
+4. Utiliser une console série
 	1. Applications déjà présentes
 	2. Installation d'applications plus pratiques
-4. Homebrew
+5. Bonus : Homebrew
+
+## Installer les XCode Command Line Tools
+
+Pour développer de manière générale sur macOS vous pouvez installer [XCode](https://developer.apple.com/xcode/) (qui est un IDE complet) à partir de [l'App Store](https://itunes.apple.com/fr/app/xcode/id497799835?mt=12)
+Personnelement j'ai juste installé les Command Line Tools qui sont les outils de développement classiques (gcc, g++, make, gdb...) en ligne de commmande.
+
+1. Lancez le Terminal qui est dans ```/Applications/Utilities/```
+2. Tapez : xcode-select -p
+
+Si vous avez un résultat tel que : ```/Applications/Xcode.app/Contents/Developer```
+Xcode est déjà entièrement installé. Mettez le à jour via l'App Store, lancez Xcode pour accepter les termes et conditions pour rendre la mise à jour effective. Redémarrez.
+
+3. Installez les XCode Command Line Tools : ```xcode-select --install```
+vous avez normalement une popup qui s'affiche, cliquez sur "Installer"
+
+4. Vérifiez la bonne installation : ```xcode-select -p```
+Vous devriez avoir le résultat suivant : ```/Library/Developer/CommandLineTools```
 
 ## Installer la chaine de cross-compilation GCC ARM Embedded
 
@@ -45,6 +63,7 @@
 ## Installer une console série 
 
 ### Applications déjà présentes
+
 * cu
 * screen :  ```screen /dev/tty.usbserial 115200 cs8 -fn ```
 pour se déconnecter pressez : CTRL+A suivi par ```:quit```
@@ -66,12 +85,12 @@ Connectez vous à la carte en sélectionnant "usbmodem" dans la section "Serial 
 
 N'hésitez pas à appuyez sur le bouton reset de la board une fois connecté si vous n'avez pas de retour.
 
-## BONUS : Homebrew : installer des logiciels plus simplement
+## Bonus : Homebrew : installer des logiciels plus simplement
 
 [Homebrew](https://brew.sh/) est un peu l'équivalent de apt-get sous Debian pour installer des logiciels sous mac.
 
-* installez Homebrew : ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/homebrew/install/master/install)"```
-* vérifiez l'installation : ```brew doctor```
-* installez un paquet (ex: wget) : ```brew install wget```
+* Installez Homebrew : ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/homebrew/install/master/install)"```
+* Vérifiez l'installation : ```brew doctor```
+* Installez un paquet (ex: wget) : ```brew install wget```
 
 Les paquets sont installés dans ```/usr/local/Cellar/``` et un lien symbolique est créé dans ```/usr/local/bin```
