@@ -17,19 +17,20 @@
 
 ## Installer les XCode Command Line Tools
 
-Pour développer de manière générale sur macOS vous pouvez installer [XCode](https://developer.apple.com/xcode/) (qui est un IDE complet) à partir de [l'App Store](https://itunes.apple.com/fr/app/xcode/id497799835?mt=12)
-Personnelement j'ai juste installé les Command Line Tools qui sont les outils de développement classiques (gcc, g++, make, gdb...) en ligne de commmande.
+Pour développer de manière générale sur macOS, vous pouvez installer l'IDE complet [XCode](https://developer.apple.com/xcode/) à partir de [l'App Store](https://itunes.apple.com/fr/app/xcode/id497799835?mt=12).
+Personnellement, j'ai juste installé les Command Line Tools, qui sont les outils de développement classiques (gcc, g++, make, gdb...) en ligne de commmande.
 
 1. Lancez le Terminal qui est dans ```/Applications/Utilities/```
-2. Tapez : xcode-select -p
+2. Tapez : ```xcode-select -p```
 
-Si vous avez un résultat tel que : ```/Applications/Xcode.app/Contents/Developer```
-Xcode est déjà entièrement installé. Mettez le à jour via l'App Store, lancez Xcode pour accepter les termes et conditions pour rendre la mise à jour effective. Redémarrez.
+Si vous avez un résultat tel que : ```/Applications/Xcode.app/Contents/Developer``` alors Xcode est déjà entièrement installé.
+Mettez le à jour via l'App Store puis lancez le et acceptez les termes et conditions pour rendre la mise à jour effective. Redémarrez.
 
-3. Installez les XCode Command Line Tools : ```xcode-select --install```
-vous avez normalement une popup qui s'affiche, cliquez sur "Installer"
+Sinon :
 
-4. Vérifiez la bonne installation : ```xcode-select -p```
+1. Installez les XCode Command Line Tools : ```xcode-select --install```
+Vous avez normalement une popup qui s'affiche, cliquez sur "Installer"
+2. Vérifiez la bonne installation : ```xcode-select -p```
 Vous devriez avoir le résultat suivant : ```/Library/Developer/CommandLineTools```
 
 ## Installer la chaine de cross-compilation GCC ARM Embedded
@@ -76,14 +77,14 @@ pour se déconnecter pressez : CTRL+A suivi par ```:quit```
 	* Installer avec MacPorts : ```ports install picocom```
 Pour vous connecter tapez : ```picocom -b 115200 -f n -p n -d 8 /dev/cu.usbmodem```
 
-Attention : ```cu.usbmodem``` est normalement suivi d'un chiffre, appuyez sur tab pour le compléter; pour ma part j'ai ```cu.usbmodem1421```
+Attention : ```cu.usbmodem``` est normalement suivi d'un chiffre, appuyez sur tab pour le compléter ; pour ma part j'ai ```cu.usbmodem1421```
 
 * Serial Console (graphique) :
 	* [App Store](https://itunes.apple.com/us/app/serialtools/id611021963)
 	* [site officiel w7ay](http://www.w7ay.net/site/Applications/Serial%20Tools/Contents/download.html)
 Connectez vous à la carte en sélectionnant "usbmodem" dans la section "Serial Port"
 
-N'hésitez pas à appuyez sur le bouton reset de la board une fois connecté si vous n'avez pas de retour.
+N'hésitez pas à appuyer sur le bouton reset de la board une fois connecté si vous n'avez pas de retour.
 
 ## Bonus : Homebrew : installer des logiciels plus simplement
 
@@ -93,4 +94,4 @@ N'hésitez pas à appuyez sur le bouton reset de la board une fois connecté si 
 * Vérifiez l'installation : ```brew doctor```
 * Installez un paquet (ex: wget) : ```brew install wget```
 
-Les paquets sont installés dans ```/usr/local/Cellar/``` et un lien symbolique est créé dans ```/usr/local/bin```
+Les paquets sont installés dans ```/usr/local/Cellar/``` et un lien symbolique est créé dans ```/usr/local/bin```.
