@@ -11,7 +11,7 @@
 	2. Via Homebrew (plus simple)
 3. Installer JLinkGDBServer et les drivers de la sonde SEGGER
 4. Utiliser une console série
-	1. Applications déjà présentes
+	1. Application déjà présente
 	2. Installation d'applications plus pratiques
 5. Bonus : Homebrew
 
@@ -63,7 +63,7 @@ Vous devriez avoir le résultat suivant : ```/Library/Developer/CommandLineTools
 
 ## Installer une console série 
 
-### Applications déjà présentes
+### Application déjà présente
 
 * cu
 * screen :  ```screen /dev/tty.usbserial 115200 cs8 -fn ```
@@ -75,9 +75,10 @@ pour se déconnecter pressez : CTRL+A suivi par ```:quit```
 	* Installer à partir du [code source](https://github.com/npat-efault/picocom)
 	* Installer avec Homebrew Tapez : ```brew install picocom```
 	* Installer avec MacPorts : ```ports install picocom```
-Pour vous connecter tapez : ```picocom -b 115200 -f n -p n -d 8 /dev/cu.usbmodem```
 
-Attention : ```cu.usbmodem``` est normalement suivi d'un chiffre, appuyez sur tab pour le compléter ; pour ma part j'ai ```cu.usbmodem1421```
+Pour vous connecter tapez : ```picocom -b 115200 -f n -y n -d 8 -p 1 /dev/cu.usbmodem<numero>```
+Attention : ```cu.usbmodem``` est suivi d'un chiffre, appuyez sur tab pour le compléter ; pour ma part j'ai ```cu.usbmodem311```
+Pour se déconnecter pressez : CTRL+A suivi de CTRL+Q
 
 * Serial Console (graphique) :
 	* [App Store](https://itunes.apple.com/us/app/serialtools/id611021963)
@@ -88,10 +89,11 @@ N'hésitez pas à appuyer sur le bouton reset de la board une fois connecté si 
 
 ## Bonus : Homebrew : installer des logiciels plus simplement
 
-[Homebrew](https://brew.sh/) est un peu l'équivalent de apt-get sous Debian pour installer des logiciels sous mac.
+[Homebrew](https://brew.sh/) est un peu l'équivalent de apt-get sous Debian pour installer des logiciels sous macOS.
+Il en existe d'autres tels que MacPorts ou Fink. Je vous laisse faire vos recherches. Pour ma part j'utilise Homebrew.
 
 * Installez Homebrew : ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/homebrew/install/master/install)"```
 * Vérifiez l'installation : ```brew doctor```
 * Installez un paquet (ex: wget) : ```brew install wget```
 
-Les paquets sont installés dans ```/usr/local/Cellar/``` et un lien symbolique est créé dans ```/usr/local/bin```.
+Les paquets sont installés dans ```/usr/local/Cellar/``` et un lien symbolique est automatiquement créé dans ```/usr/local/bin```.
