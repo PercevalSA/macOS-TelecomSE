@@ -65,7 +65,9 @@ Attention : ```gcc-arm-none-eabi``` n'installe pas la dernière version. Pour pl
 4. Suivez les instructions
 5. Vérifiez la bonne installation : ```JLinkGDBServer```
 6. Si le résultat est ```command not found```, ajoutez ```/Applications/SEGGER/JLink``` à votre PATH avec ```export PATH=$PATH:/Applications/SEGGER/JLink``` 
-7. Vous pouvez aussi ajouter cette ligne dans votre ```.profile``` ou ```.bashrc``` ou ```.zshrc``` dans votre dossier personnel
+7. Vous devez aussi ajouter cette ligne dans votre ```.bashrc``` ou ```.zshrc``` dans votre dossier personnel : : ```cd $HOME && echo "export PATH=$PATH:/Applications/SEGGER/JLink" >> .bashrc"```
+8. Si vous utilisez zsh, changez ```.bashrc``` par ```.zshrc```
+9. Re-vérifiez la bonne installation : ```JLinkGDBServer```
 
 ## Installer une console série 
 
