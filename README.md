@@ -1,7 +1,6 @@
 # ROSE et SE20* sous macOS
 
 ### le guide du fanboy infiltré chez les barbus
-#### Un tutoriel pour survivre dans la filière Systèmes Embarqués à Télécom ParisTech avec un ordinateur sous macOS 
 
 #### Sommaire
 
@@ -11,7 +10,7 @@
 	2. Via Homebrew
 3. Installer JLinkGDBServer et les drivers de la sonde SEGGER
 4. Utiliser une console série
-	1. Application déjà présente
+	1. Applications déjà présentes
 	2. Installation d'applications plus pratiques
 5. Bonus : Homebrew
 
@@ -71,7 +70,7 @@ Attention : ```gcc-arm-none-eabi``` n'installe pas la dernière version. Pour pl
 
 ## Installer une console série 
 
-### Application déjà présente
+### Applications déjà présentes
 
 * cu
 * screen :  ```screen /dev/tty.usbserial 115200 cs8 -fn ```
@@ -84,7 +83,7 @@ pour se déconnecter pressez : CTRL+A suivi par ```:quit```
 	* Installer avec Homebrew : ```brew install minicom```
 	* Installer avec MacPorts : ```sudo port install minicom```
 
-* picocom qui est un logiciel dérivé de minicom :
+* picocom :
 	* Installer à partir du [code source](https://github.com/npat-efault/picocom)
 	* Installer avec Homebrew : ```brew install picocom```
 	* Installer avec MacPorts : ```sudo port install picocom```
@@ -98,7 +97,7 @@ Pour se déconnecter pressez : CTRL+A suivi de CTRL+Q
 	* [site officiel w7ay](http://www.w7ay.net/site/Applications/Serial%20Tools/Contents/download.html)
 Connectez vous à la carte en sélectionnant "usbmodem" dans la section "Serial Port"
 
-N'hésitez pas à appuyer sur le bouton reset de la board une fois connecté si vous n'avez pas de retour.
+Si vous n'avez pas de retour une fois connecté, appuyez sur le bouton reset de la carte.
 
 ## Bonus : Homebrew : installer des logiciels plus simplement
 
